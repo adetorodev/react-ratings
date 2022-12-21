@@ -6,12 +6,12 @@ import ColorList from './components/ColorList'
 import { useState } from 'react';
 
 function App() {
-  // const [colors] = useState(ColorData)
+  const [colors] = useState(ColorData)
   return (
-    // <ColorList colors={colors} />
-    <div className="App">
-      <StartRatings style={{backgroundColor: "lightblue"}} onDoubleClick={e=> alert("double Click")}/>
-     </div>
+    <ColorList colors={colors} />
+    // <div className="App">
+    //   <StartRatings style={{backgroundColor: "lightblue"}} onDoubleClick={e=> alert("double Click")}/>
+    //  </div>
   );
 }
 
