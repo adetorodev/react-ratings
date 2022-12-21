@@ -3,6 +3,7 @@ import { FaStar } from "react-icons/fa"
 import Star from './Star'
 
 
+
 const createArray = length => [...Array(length)];
 
 function StartRatings({style={}, totalStars = 5, ...props }) {
