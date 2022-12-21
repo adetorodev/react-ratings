@@ -1,14 +1,29 @@
-import React from 'react'
-import StartRatings from './StartRatings'
+import React from "react";
+import StartRatings from "./StartRatings";
+import { FaTrash } from "react-icons/fa";
+// FaTrash
 
-function Color({ title, color, rating}) {
+function Color({
+  id,
+  title,
+  color,
+  rating,
+  onRemove = (f) => f,
+  onRate = (f) => f,
+}) {
   return (
     <section>
-        <h1>{title}</h1>
-        <div style={{height: 50, backgroundColor: color}} />
-        <StartRatings selectedStars={rating} />
+      <h1>{title}</h1>
+      <button onClick={() => onRemove(id)}>
+        <FaTrash />
+      </button>
+      <div style={{ height: 50, backgroundColor: color }} />
+      <StartRatings
+        selectedStars={rating}
+        onRate={(rating) => onRate(id, rating)}
+      />
     </section>
-  )
+  );
 }
 
-export default Color
+export default Color;
